@@ -22,10 +22,9 @@
     - Deployment of app pod:
         kubectl apply -f .infrastructure/todoapp-pod.yml
 ### 5. Todo app test.
-    - port-forwarding:
+    - port-forwarding pod to local machine:
         kubectl port-forward pod/todoapp 8081:8080 -n todoapp
-    - via curl:
-        kubectl exec -it busybox -n todoapp -- sh
+    - via curl on host:
         curl http://localhost:8081/api/liveness/
         curl http://localhost:8081/api/readiness/
     
